@@ -21,6 +21,7 @@ writes them, and the tests that prove the tooling refuses dishonest state.
 | `scripts/deps_inventory.py` | Dependency, licence and advisory coverage — with its limits stated |
 | `scripts/weekly_report.py` | Composes the weekly report from live execution only |
 | `scripts/check_failed.py` | CI gate: red build while any capability is `failed` |
+| `scripts/ci_local.sh` | Runs every CI gate locally, in the same order, and exits non-zero on the first failure |
 | `tests/` | 40 stdlib tests over the lifecycle, the gates and the audit chain |
 | `vendor/` | The one pinned third-party artifact (`pip-audit` wheel), checksum-matched to PyPI |
 
@@ -130,9 +131,38 @@ wheel `pip_audit-2.10.1-py3-none-any.whl`, matched against the downloaded wheel
   rewritten history shows up as a changed commit.
 - Nothing here is verified on hardware other than Linux x86_64 / Python 3.12.
 
+## CI status — read this before assuming the pipeline is green
+
+The workflow `.github/workflows/ci.yml` is committed and passes the CI linter
+(invalid YAML, unpinned actions, missing permissions/concurrency/timeout,
+incomplete echo-only steps, hardcoded secrets: none found).
+
+**It has not been observed running successfully.** Both runs triggered on
+2026-10-26 (run `40287140816`, attempt 1 and attempt 2) failed at job startup:
+the jobs were created and reported `failure` after roughly two seconds, with
+`runner_name` empty, **zero steps executed** and no logs produced. That is a
+rejection before a runner was assigned, not a failing test — the gates
+contained in the workflow never executed.
+
+Because a pipeline must not be called working without a run, the same gates are
+executed by `scripts/ci_local.sh` and were run here: all passed. The registry and
+its audit chain were additionally restored from this repository into a fresh
+directory and re-validated in a new process (40 tests OK, preflight exit 0,
+audit chain intact). The remaining unknown is GitHub-side runner allocation on
+this account; nothing in the repository can fix that, and it is reported rather
+than papered over.
+
 ## Weekly cadence
 
-`.github/workflows/ci.yml` runs the gates on every push and pull request, and on
-a schedule (Mondays 04:00 UTC = 09:30 IST) runs **live** re-verification,
-uploads the registry plus the weekly report, and fails the run if any capability
-was demoted — so a stale claim cannot sit green until someone notices.
+`.github/workflows/ci.yml` is written to run the gates on every push and pull
+request, and on a schedule (Mondays 04:00 UTC = 09:30 IST) to run **live**
+re-verification, upload the registry plus the weekly report, and fail the run if
+any capability was demoted — so a stale claim cannot sit green until someone
+notices. Until GitHub allocates a runner for this account (see *CI status*
+above), the equivalent weekly job is:
+
+```bash
+bash scripts/ci_local.sh
+python scripts/reverify.py --registry capability-registry.json --max-age-days 90
+python scripts/weekly_report.py --out weekly-report.md
+```
