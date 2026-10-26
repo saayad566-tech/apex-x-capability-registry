@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.lock
+*.tmp
+*.bak.*
+.progress/
+deps-inventory.md
+weekly-report.md
+memory-export.json
+.pytest_cache/
+registry-broken-seed.bak.json
+registry-broken-seed.bak.json.audit.jsonl

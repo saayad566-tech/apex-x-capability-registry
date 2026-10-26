@@ -1,0 +1,7 @@
+# Development / CI tooling. Pinned exactly; this is the only third-party code
+# this repository pulls in, and it exists solely to audit dependencies.
+#
+# pip-audit 2.10.1 - Apache-2.0 - https://pypi.org/project/pip-audit/2.10.1/
+# Wheel sha256 (from the PyPI JSON API, matched against the downloaded wheel):
+#   99ef3f600a317c1945f1e89e227ef26e1c2d618429b8bd3fa6f4f7c440c4611a
+pip-audit==2.10.1

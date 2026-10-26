@@ -1,0 +1,435 @@
+{
+  "capabilities": {
+    "capability-registry": {
+      "approval_by": "akshya",
+      "approval_ref": "Instruction 2026-10-26: proceed with upgrades A (durable registry), B (supply chain), C (verification freshness)",
+      "approved_sha256": "da6f64f77180a7be04d47163c0e90ad446eb496485ccbe154f5d29387333419c",
+      "artifact": "scripts/capability_registry.py",
+      "dependencies": [],
+      "evidence": "ran python3 -m unittest discover -s tests -p test_registry.py -> exit 0 at 2026-10-26T07:37:26+00:00",
+      "failure_reason": "",
+      "history": [
+        {
+          "at": "2026-10-26T07:37:25+00:00",
+          "status": "discovered"
+        },
+        {
+          "at": "2026-10-26T07:37:25+00:00",
+          "status": "assessed"
+        },
+        {
+          "at": "2026-10-26T07:37:25+00:00",
+          "status": "approved"
+        },
+        {
+          "at": "2026-10-26T07:37:26+00:00",
+          "status": "installed"
+        },
+        {
+          "at": "2026-10-26T07:37:26+00:00",
+          "status": "verified"
+        }
+      ],
+      "kind": "tool",
+      "license": "internal",
+      "name": "capability-registry",
+      "plan_hash": null,
+      "purpose": "Registry, audit chain and lifecycle guards for capability claims",
+      "recovery_note": "",
+      "requires": {},
+      "risk_level": "low",
+      "rollback": "rm scripts/capability_registry.py",
+      "rollback_tested": false,
+      "sha256": "da6f64f77180a7be04d47163c0e90ad446eb496485ccbe154f5d29387333419c",
+      "sha256_trusted": false,
+      "source": "https://github.com/saayad566-tech/apex-x-capability-registry#scripts/capability_registry.py",
+      "status": "verified",
+      "test_argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_registry.py"
+      ],
+      "tests": [
+        "python3 -m unittest discover -s tests -p test_registry.py"
+      ],
+      "verify_result": {
+        "artifact_sha256": "da6f64f77180a7be04d47163c0e90ad446eb496485ccbe154f5d29387333419c",
+        "at": "2026-10-26T07:37:26+00:00",
+        "command": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-p",
+          "test_registry.py"
+        ],
+        "cwd": null,
+        "env": {
+          "arch": "x86_64",
+          "os": "linux",
+          "python": "3.12.13"
+        },
+        "exit_code": 0,
+        "stderr": "...............\n----------------------------------------------------------------------\nRan 15 tests in 0.134s\n\nOK\n",
+        "stdout": "",
+        "timeout": false
+      }
+    },
+    "dependency-inventory": {
+      "approval_by": "akshya",
+      "approval_ref": "Instruction 2026-10-26: proceed with upgrades A (durable registry), B (supply chain), C (verification freshness)",
+      "approved_sha256": "314ed9a8e5217abdaa78d851a33b7a5ecc4f5d2f91ed81910d8cc9784635f852",
+      "artifact": "scripts/deps_inventory.py",
+      "dependencies": [
+        "capability-registry"
+      ],
+      "evidence": "ran python3 scripts/deps_inventory.py --no-probe --json -> exit 0 at 2026-10-26T07:37:38+00:00",
+      "failure_reason": "",
+      "history": [
+        {
+          "at": "2026-10-26T07:37:35+00:00",
+          "status": "discovered"
+        },
+        {
+          "at": "2026-10-26T07:37:36+00:00",
+          "status": "assessed"
+        },
+        {
+          "at": "2026-10-26T07:37:36+00:00",
+          "status": "approved"
+        },
+        {
+          "at": "2026-10-26T07:37:36+00:00",
+          "status": "installed"
+        },
+        {
+          "at": "2026-10-26T07:37:38+00:00",
+          "status": "verified"
+        }
+      ],
+      "kind": "tool",
+      "license": "internal",
+      "name": "dependency-inventory",
+      "plan_hash": null,
+      "purpose": "Dependency, licence and advisory-coverage inventory with stated limitations",
+      "recovery_note": "",
+      "requires": {},
+      "risk_level": "low",
+      "rollback": "rm scripts/deps_inventory.py",
+      "rollback_tested": false,
+      "sha256": "314ed9a8e5217abdaa78d851a33b7a5ecc4f5d2f91ed81910d8cc9784635f852",
+      "sha256_trusted": false,
+      "source": "https://github.com/saayad566-tech/apex-x-capability-registry#scripts/deps_inventory.py",
+      "status": "verified",
+      "test_argv": [
+        "python3",
+        "scripts/deps_inventory.py",
+        "--no-probe",
+        "--json"
+      ],
+      "tests": [
+        "python3 scripts/deps_inventory.py --no-probe --json"
+      ],
+      "verify_result": {
+        "artifact_sha256": "314ed9a8e5217abdaa78d851a33b7a5ecc4f5d2f91ed81910d8cc9784635f852",
+        "at": "2026-10-26T07:37:38+00:00",
+        "command": [
+          "python3",
+          "scripts/deps_inventory.py",
+          "--no-probe",
+          "--json"
+        ],
+        "cwd": null,
+        "env": {
+          "arch": "x86_64",
+          "os": "linux",
+          "python": "3.12.13"
+        },
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "pdf2image\": \"MIT\",\n    \"pdfkit\": \"MIT\",\n    \"pdfminer.six\": \"MIT\",\n    \"pdfplumber\": \"MIT License\",\n    \"pikepdf\": \"MPL-2.0\",\n    \"pillow\": \"MIT-CMU\",\n    \"pip\": \"MIT\",\n    \"pip-requirements-parser\": \"MIT\",\n    \"pip_api\": \"Apache Software License\",\n    \"pip_audit\": \"Apache Software License\",\n    \"platformdirs\": \"MIT\",\n    \"protobuf\": \"3-Clause BSD License\",\n    \"py-serializable\": \"Apache-2.0\",\n    \"pycparser\": \"BSD-3-Clause\",\n    \"pydyf\": \"BSD License\",\n    \"pyee\": \"MIT\",\n    \"pymupdf\": \"Dual Licensed - GNU AFFERO GPL 3.0 or Artifex Commercial License\",\n    \"pyparsing\": \"MIT\",\n    \"pypdf\": \"BSD-3-Clause\",\n    \"pypdfium2\": \"BSD-3-Clause, Apache-2.0, dependency licenses\",\n    \"pyphen\": \"GNU General Public License v2 or later (GPLv2+)\",\n    \"python-dateutil\": \"Dual License\",\n    \"python-docx\": \"MIT\",\n    \"python-dotenv\": \"BSD-3-Clause\",\n    \"python-pptx\": \"MIT\",\n    \"reportlab\": \"BSD license (see license.txt for details), Copyright (c) 2000-2025, ReportLab Inc.\",\n    \"requests\": \"Apache-2",
+        "timeout": false
+      }
+    },
+    "pip-audit": {
+      "approval_by": "akshya",
+      "approval_ref": "Instruction 2026-10-26: proceed with upgrades A (durable registry), B (supply chain), C (verification freshness)",
+      "approved_sha256": "99ef3f600a317c1945f1e89e227ef26e1c2d618429b8bd3fa6f4f7c440c4611a",
+      "artifact": "vendor/pip_audit-2.10.1-py3-none-any.whl",
+      "dependencies": [],
+      "evidence": "ran python3 -m pip_audit --local -> exit 0 at 2026-10-26T07:37:46+00:00",
+      "failure_reason": "",
+      "history": [
+        {
+          "at": "2026-10-26T07:37:39+00:00",
+          "status": "discovered"
+        },
+        {
+          "at": "2026-10-26T07:37:40+00:00",
+          "status": "assessed"
+        },
+        {
+          "at": "2026-10-26T07:37:40+00:00",
+          "status": "approved"
+        },
+        {
+          "at": "2026-10-26T07:37:41+00:00",
+          "status": "installed"
+        },
+        {
+          "at": "2026-10-26T07:37:46+00:00",
+          "status": "verified"
+        }
+      ],
+      "kind": "tool",
+      "license": "Apache-2.0",
+      "name": "pip-audit",
+      "plan_hash": null,
+      "purpose": "Vulnerability audit of installed distributions against OSV/PyPI advisory data",
+      "recovery_note": "",
+      "requires": {},
+      "risk_level": "low",
+      "rollback": "python3 -m pip uninstall -y pip-audit",
+      "rollback_tested": false,
+      "sha256": "99ef3f600a317c1945f1e89e227ef26e1c2d618429b8bd3fa6f4f7c440c4611a",
+      "sha256_trusted": true,
+      "source": "https://pypi.org/project/pip-audit/2.10.1/",
+      "status": "verified",
+      "test_argv": [
+        "python3",
+        "-m",
+        "pip_audit",
+        "--local"
+      ],
+      "tests": [
+        "python3 -m pip_audit --local"
+      ],
+      "verify_result": {
+        "artifact_sha256": "99ef3f600a317c1945f1e89e227ef26e1c2d618429b8bd3fa6f4f7c440c4611a",
+        "at": "2026-10-26T07:37:46+00:00",
+        "command": [
+          "python3",
+          "-m",
+          "pip_audit",
+          "--local"
+        ],
+        "cwd": null,
+        "env": {
+          "arch": "x86_64",
+          "os": "linux",
+          "python": "3.12.13"
+        },
+        "exit_code": 0,
+        "stderr": "No known vulnerabilities found\n",
+        "stdout": "",
+        "timeout": false
+      }
+    },
+    "preflight-gate": {
+      "approval_by": "akshya",
+      "approval_ref": "Instruction 2026-10-26: proceed with upgrades A (durable registry), B (supply chain), C (verification freshness)",
+      "approved_sha256": "8f8067b9e9bed78c8c109e600d59e6cf2daf6989382ccb393633d04d476d0042",
+      "artifact": "scripts/preflight.py",
+      "dependencies": [
+        "capability-registry"
+      ],
+      "evidence": "ran python3 -m unittest discover -s tests -p test_preflight.py -> exit 0 at 2026-10-26T07:37:31+00:00",
+      "failure_reason": "",
+      "history": [
+        {
+          "at": "2026-10-26T07:37:27+00:00",
+          "status": "discovered"
+        },
+        {
+          "at": "2026-10-26T07:37:28+00:00",
+          "status": "assessed"
+        },
+        {
+          "at": "2026-10-26T07:37:28+00:00",
+          "status": "approved"
+        },
+        {
+          "at": "2026-10-26T07:37:28+00:00",
+          "status": "installed"
+        },
+        {
+          "at": "2026-10-26T07:37:31+00:00",
+          "status": "verified"
+        }
+      ],
+      "kind": "tool",
+      "license": "internal",
+      "name": "preflight-gate",
+      "plan_hash": null,
+      "purpose": "Fail-closed preflight: missing/tampered state exits 2, dishonest state exits 1",
+      "recovery_note": "",
+      "requires": {},
+      "risk_level": "low",
+      "rollback": "rm scripts/preflight.py",
+      "rollback_tested": false,
+      "sha256": "8f8067b9e9bed78c8c109e600d59e6cf2daf6989382ccb393633d04d476d0042",
+      "sha256_trusted": false,
+      "source": "https://github.com/saayad566-tech/apex-x-capability-registry#scripts/preflight.py",
+      "status": "verified",
+      "test_argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_preflight.py"
+      ],
+      "tests": [
+        "python3 -m unittest discover -s tests -p test_preflight.py"
+      ],
+      "verify_result": {
+        "artifact_sha256": "8f8067b9e9bed78c8c109e600d59e6cf2daf6989382ccb393633d04d476d0042",
+        "at": "2026-10-26T07:37:31+00:00",
+        "command": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-p",
+          "test_preflight.py"
+        ],
+        "cwd": null,
+        "env": {
+          "arch": "x86_64",
+          "os": "linux",
+          "python": "3.12.13"
+        },
+        "exit_code": 0,
+        "stderr": "..................\n----------------------------------------------------------------------\nRan 18 tests in 1.586s\n\nOK\n",
+        "stdout": "",
+        "timeout": false
+      }
+    },
+    "reverify-engine": {
+      "approval_by": "akshya",
+      "approval_ref": "Instruction 2026-10-26: proceed with upgrades A (durable registry), B (supply chain), C (verification freshness)",
+      "approved_sha256": "02f0449ae16eb1d70fe4891c783159c5252815ebda66f4866274873544a8cf0e",
+      "artifact": "scripts/reverify.py",
+      "dependencies": [
+        "capability-registry"
+      ],
+      "evidence": "ran python3 -m unittest discover -s tests -p test_reverify.py -> exit 0 at 2026-10-26T07:37:34+00:00",
+      "failure_reason": "",
+      "history": [
+        {
+          "at": "2026-10-26T07:37:31+00:00",
+          "status": "discovered"
+        },
+        {
+          "at": "2026-10-26T07:37:32+00:00",
+          "status": "assessed"
+        },
+        {
+          "at": "2026-10-26T07:37:32+00:00",
+          "status": "approved"
+        },
+        {
+          "at": "2026-10-26T07:37:32+00:00",
+          "status": "installed"
+        },
+        {
+          "at": "2026-10-26T07:37:34+00:00",
+          "status": "verified"
+        }
+      ],
+      "kind": "tool",
+      "license": "internal",
+      "name": "reverify-engine",
+      "plan_hash": null,
+      "purpose": "Scheduled re-verification that demotes stale evidence through audited transitions",
+      "recovery_note": "",
+      "requires": {},
+      "risk_level": "low",
+      "rollback": "rm scripts/reverify.py",
+      "rollback_tested": false,
+      "sha256": "02f0449ae16eb1d70fe4891c783159c5252815ebda66f4866274873544a8cf0e",
+      "sha256_trusted": false,
+      "source": "https://github.com/saayad566-tech/apex-x-capability-registry#scripts/reverify.py",
+      "status": "verified",
+      "test_argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_reverify.py"
+      ],
+      "tests": [
+        "python3 -m unittest discover -s tests -p test_reverify.py"
+      ],
+      "verify_result": {
+        "artifact_sha256": "02f0449ae16eb1d70fe4891c783159c5252815ebda66f4866274873544a8cf0e",
+        "at": "2026-10-26T07:37:34+00:00",
+        "command": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-p",
+          "test_reverify.py"
+        ],
+        "cwd": null,
+        "env": {
+          "arch": "x86_64",
+          "os": "linux",
+          "python": "3.12.13"
+        },
+        "exit_code": 0,
+        "stderr": ".......\n----------------------------------------------------------------------\nRan 7 tests in 1.440s\n\nOK\n",
+        "stdout": "",
+        "timeout": false
+      }
+    }
+  },
+  "lessons": [
+    {
+      "at": "2026-10-26T07:38:13+00:00",
+      "capability": "",
+      "capability_version": "",
+      "lesson": "The 2026-10-26 weekly review found no capability-registry.json, no audit log and no lessons store anywhere on the filesystem; the sandbox had been recycled, so every prior capability claim lived only in volatile storage. Fix implemented: the registry, its hash-chained audit log, the tooling and the tests now live in a git repository (github.com/saayad566-tech/apex-x-capability-registry) and CI re-validates them from a clean checkout.",
+      "source": "weekly review 2026-10-26; filesystem search returned no registry",
+      "status": "verified",
+      "topic": "capability-registry-persistence"
+    },
+    {
+      "at": "2026-10-26T07:38:14+00:00",
+      "capability": "",
+      "capability_version": "",
+      "lesson": "The first seeding run exported one PYPI_SHA environment variable that every capability entry picked up, so all five entries recorded the pip-audit wheel digest as their artifact checksum. preflight.py caught it before commit with four 'artifact checksum mismatch' findings. Rule: compute an artifact digest at the point of use, never from a batch-scoped variable, and always run the fail-closed preflight over a freshly seeded registry before committing it.",
+      "source": "seeding run 2026-10-26, preflight exit 1, four checksum mismatches",
+      "status": "verified",
+      "topic": "batch-seeding-shared-checksum"
+    },
+    {
+      "at": "2026-10-26T07:38:14+00:00",
+      "capability": "",
+      "capability_version": "",
+      "lesson": "pip-audit's default 'pip-audit -r requirements.txt' path failed here because it builds an isolated environment and tries to upgrade pip inside it. 'pip-audit --local' works and audits the running interpreter's distributions. When an advisory feed or the isolated-environment path is unavailable, the honest report is 'coverage unknown', never 'no vulnerabilities found'.",
+      "source": "pip-audit 2.10.1 run 2026-10-26: isolated-env upgrade failed, --local returned exit 0",
+      "status": "verified",
+      "topic": "advisory-feed-vs-coverage"
+    }
+  ],
+  "updated": "2026-10-26T07:38:14+00:00",
+  "version": 3
+}

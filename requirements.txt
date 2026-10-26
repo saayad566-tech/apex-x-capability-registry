@@ -1,0 +1,6 @@
+# Runtime dependencies: NONE.
+#
+# Every script in this repository uses the Python standard library only, so
+# there is no third-party runtime surface to pin, audit or license-review.
+# This file is intentionally empty of packages; keeping it present makes the
+# "no runtime dependencies" claim checkable rather than assumed.
