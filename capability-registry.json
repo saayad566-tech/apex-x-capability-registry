@@ -428,8 +428,17 @@
       "source": "pip-audit 2.10.1 run 2026-10-26: isolated-env upgrade failed, --local returned exit 0",
       "status": "verified",
       "topic": "advisory-feed-vs-coverage"
+    },
+    {
+      "at": "2026-10-26T07:46:44+00:00",
+      "capability": "",
+      "capability_version": "",
+      "lesson": "Three GitHub Actions runs on 2026-10-26 (40287140816 attempt 1 and 2, 40287774187) each created their jobs and failed them within 2-4 seconds with runner_name empty, zero steps executed and no logs retrievable; the workflow state is 'active' and the CI linter is clean, so the failure is runner allocation on the account, not the workflow or the code. Rule: a 2-second job with no runner and no steps is an infrastructure rejection, not a test failure - never report such a pipeline as green, and keep an equivalent local gate (scripts/ci_local.sh) so the checks can still be executed.",
+      "source": "GitHub API: run 40287140816 job 121453369114 started 07:39:36 completed 07:39:38, steps [], runner_name ''; run 40287774187 completed in 4s",
+      "status": "verified",
+      "topic": "ci-runner-never-allocated"
     }
   ],
-  "updated": "2026-10-26T07:38:14+00:00",
+  "updated": "2026-10-26T07:46:44+00:00",
   "version": 3
 }
