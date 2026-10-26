@@ -99,8 +99,11 @@ class RegistryLifecycleTests(unittest.TestCase):
         self.assertEqual(item["status"], "verified")
 
     def test_secrets_are_redacted_in_lessons(self):
-        item = cr.add_lesson(self.reg, "leak", "token sk-abcdefghijklmnopqrstuvwx")
-        self.assertNotIn("sk-abcdefghijklmnopqrstuvwx", item["lesson"])
+        # built at runtime so the repository never contains a literal that
+        # trips a secret scanner (this is a fixture, not a credential)
+        fake = "sk-" + "a" * 24
+        item = cr.add_lesson(self.reg, "leak", "token " + fake)
+        self.assertNotIn(fake, item["lesson"])
         self.assertIn("REDACTED", item["lesson"])
 
 
